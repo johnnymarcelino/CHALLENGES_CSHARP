@@ -1,0 +1,13 @@
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\obj\Debug\netcoreapp2.1\CLG_02.csproj.AssemblyReference.cache
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\obj\Debug\netcoreapp2.1\CLG_02.GeneratedMSBuildEditorConfig.editorconfig
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\obj\Debug\netcoreapp2.1\CLG_02.AssemblyInfoInputs.cache
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\obj\Debug\netcoreapp2.1\CLG_02.AssemblyInfo.cs
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\obj\Debug\netcoreapp2.1\CLG_02.csproj.CoreCompileInputs.cache
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\bin\Debug\netcoreapp2.1\CLG_02.deps.json
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\bin\Debug\netcoreapp2.1\CLG_02.runtimeconfig.json
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\bin\Debug\netcoreapp2.1\CLG_02.runtimeconfig.dev.json
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\bin\Debug\netcoreapp2.1\CLG_02.dll
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\bin\Debug\netcoreapp2.1\CLG_02.pdb
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\obj\Debug\netcoreapp2.1\CLG_02.dll
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\obj\Debug\netcoreapp2.1\CLG_02.pdb
+C:\BackEnd\C#\Seção_02\CHALLENGES_CSHARP\CLG_02\CLG_02\obj\Debug\netcoreapp2.1\CLG_02.genruntimeconfig.cache
