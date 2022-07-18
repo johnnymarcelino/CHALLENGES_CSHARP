@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+
 namespace CLG_02 {
     internal class Program {
         static void Main(string[] args) {
