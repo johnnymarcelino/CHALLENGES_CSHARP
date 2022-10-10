@@ -12,7 +12,7 @@ namespace CLG_06 {
             return (Width * Height);
         }
 
-        public double perimeter() {
+        public double Perimeter() {
             return (Height + Width) * 2;
         }
 
@@ -21,8 +21,8 @@ namespace CLG_06 {
             return Math.Sqrt(Width*Width + Height*Height);
         }
 
-        override public string ToString() { 
-            return Width + " " + Height;
-        }
+        //public override string ToString() { 
+        //    return Width + " " + Height + " " + Area() + " " + Perimeter() + " " + Diagonal();
+        //}
     }
 }
