@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 
 /*
@@ -25,35 +26,69 @@ namespace CLG_10 {
     internal class Program {
         static void Main(string[] args) {
 
-            BankOOP owner = new BankOOP();
+            //BankOOP owner = new BankOOP("Maria Brown", 2578, 500.00);
+            BankOOP owner;
 
             Console.Write("Enter with the number of your account: ");
-            owner.Token = double.Parse(Console.ReadLine());
+            //owner.Token = double.Parse(Console.ReadLine());
+            int token = int.Parse(Console.ReadLine());
 
             Console.Write("Enter with the name of the account owner: ");
-            owner.Name = Console.ReadLine();
-
+            //owner.Name = Console.ReadLine();
+            string holder = Console.ReadLine();
+            Console.WriteLine();
             Console.Write("Will be deposit account at the beginning ? (y / n) ");
-            string depoYesNot = Console.ReadLine();
-            owner.DepoYes(depoYesNot);
+            char depoYesNot = char.Parse(Console.ReadLine());
+            if (depoYesNot == 'y' || depoYesNot == 'Y') {
+                Console.Write("Enter with a value to deposit: ");
+                double startingDepos = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                owner = new BankOOP(holder, token, startingDepos);
+                //owner.DepoYes(depoYesNot);
+            }
+            else {
+                owner = new BankOOP(holder, token);
+            }
+            Console.WriteLine();
+
             //owner._deposit = Console.ReadLine();
 
             Console.WriteLine($"Account data:");
             Console.WriteLine($"{owner}");
+            Console.WriteLine();
 
-            Console.WriteLine("Would you like to deposit any more ? (y / n)");
-            depoYesNot = Console.ReadLine();
-            owner.DepoYes(depoYesNot);
+            /*Console.WriteLine("Would you like to deposit any more ? (y / n)");
+            depoYesNot = char.Parse(Console.ReadLine());
+            if (depoYesNot == 'y' || depoYesNot == 'Y') {
+                double startingDepos = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                //owner = new BankOOP(holder, token, startingDepos);
+                owner.DepoYesNot(depoYesNot);
+                Console.WriteLine($"Account data updated:");
+                Console.WriteLine(owner.ToString());
+            }
+            Console.WriteLine();
+            //owner.DepoYes(depoYesNot);
+            */
+            //Console.WriteLine($"Account data updated:");
+            //Console.WriteLine(owner);
+            //owner.BankOOP;
 
-            Console.WriteLine($"Account data updated:");
-            Console.WriteLine($"{owner}");
-            
             Console.WriteLine($"Would you like to do a withdraw ? (y / n)");
             string withdrawYesNot = Console.ReadLine();
-            owner.Withdraw(withdrawYesNot);
-
+            if (withdrawYesNot.ToUpper() == "Y") {
+                owner = new BankOOP(holder, token);
+                owner.Withdraw(withdrawYesNot);
+                //owner.DepoYes(withdrawYesNot);
+            }
             Console.WriteLine($"Account data updated:");
-            Console.WriteLine($"{owner}");
+            Console.WriteLine(owner);
+            Console.WriteLine();
+            //owner.Withdraw(withdrawYesNot);
+
+            //Console.WriteLine($"Account data updated:");
+            //Console.WriteLine(owner);
+            //Console.WriteLine($"{owner}");
+            //BankOOP owner = BankOOP("Maria Brown", 2578, 500.00);
+            //Console.WriteLine(owner.DepoYes());
         }
     }
 }
