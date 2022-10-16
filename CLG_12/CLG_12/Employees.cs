@@ -20,7 +20,7 @@ namespace CLG_12 {
         }
 
         public override string ToString() {
-            return Id + ", " + Name + ", " + Salary.ToString("F2", CultureInfo.InvariantCulture);
+            return "Id: " + Id + ", " + Name + ", " + Salary.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

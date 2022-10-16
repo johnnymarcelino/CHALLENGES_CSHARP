@@ -29,8 +29,8 @@ namespace CLG_12 {
             // declare a list with the type of the Class created reference
             List<Employees> listEmployees = new List<Employees>();
 
-            for (int i = 1; i < quantityEmployee; i++) {
-                Console.WriteLine("Employee #01");
+            for (int i = 0; i < quantityEmployee; i++) {
+                Console.WriteLine("Employee #0" + (i+1));
                 Console.Write("Id: ");
                 int id = int.Parse(Console.ReadLine());
                 Console.Write("Name: ");
@@ -41,13 +41,18 @@ namespace CLG_12 {
                 Console.WriteLine();
             }
 
+            Console.WriteLine("List of employees:");
+            foreach (Employees eachEmployees in listEmployees) {
+                Console.WriteLine(eachEmployees);
+            }
+            Console.WriteLine();
             Console.Write("Enter with the employee id that the salary will be increased: ");
-            int searchId = int.Parse(Console.ReadLine());
+            int witchIdIncrease = int.Parse(Console.ReadLine());
 
-            Employees idIncreased = listEmployees.Find(emp => emp.Id == searchId);
+            Employees idIncreased = listEmployees.Find(emp => emp.Id == witchIdIncrease);
             if (idIncreased != null) {
-                Console.Write("Enter with the employee id that the salary will be increased: ");
-                double percentage = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.Write("Enter with the percentage that will be increased: ");
+                double percentage = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                 idIncreased.IncreaseSalary(percentage);
             }
             else {
@@ -55,9 +60,9 @@ namespace CLG_12 {
             }
 
             Console.WriteLine();
-            Console.WriteLine("Update list of employees:");
-            foreach (Employees employee in listEmployees) {
-                Console.WriteLine(employee);
+            Console.WriteLine("Updated list of employees:");
+            foreach (Employees eachEmployees in listEmployees) {
+                Console.WriteLine(eachEmployees);
             }
         }
     }
