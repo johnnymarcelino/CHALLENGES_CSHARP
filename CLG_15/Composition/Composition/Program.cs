@@ -37,6 +37,7 @@ namespace Composition
                 int hours = int.Parse(Console.ReadLine());
                 HourContract contract = new HourContract(date, valuePerHour, hours);  // instanciação do hourcontract
                 worker.AddContract(contract);
+                Console.WriteLine();
             }
 
             Console.WriteLine();
