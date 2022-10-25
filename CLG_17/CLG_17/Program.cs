@@ -17,7 +17,8 @@ namespace CLG_17
             Console.Write("Birth date (DD/MM/YYYY): ");
             DateTime birthDate = DateTime.Parse(Console.ReadLine());
             Console.WriteLine("Enter order data: ");
-            Console.Write("Status: ");
+            Console.WriteLine("Status: ");
+            Console.WriteLine("Pending_Payment = 0,\r\n        Processing = 1,\r\n        Shipped = 2,\r\n        Delivered = 3");
             OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
 
             Client client = new Client(clientName, email, birthDate);
@@ -28,7 +29,7 @@ namespace CLG_17
 
             for (int i = 1; i <= items; i++)
             {
-                Console.WriteLine($"Enter #{i}item data: ");
+                Console.WriteLine($"Enter #{i} item data: ");
                 Console.WriteLine("Product name: ");
                 string productName = Console.ReadLine();
                 Console.WriteLine("Product price: ");
@@ -47,7 +48,8 @@ namespace CLG_17
 
             Console.WriteLine();
             Console.WriteLine("ORDER SUMMARY: ");
-            Console.WriteLine(order);
+            //Order order = new Order();
+            Console.WriteLine(order.ToString());
         }
     }
 }
