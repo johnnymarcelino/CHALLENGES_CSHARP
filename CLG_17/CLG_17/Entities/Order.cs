@@ -5,6 +5,17 @@ using System.Globalization;
 using System.Text;
 using System.Xml.Linq;
 
+
+/*
+CHALLENGE 17:
+
+Ler os dados de um pedido com N itens (N fornecido pelo usuário). Depois, mostrar um
+sumário do pedido conforme exemplo (próxima página). Nota: o instante do pedido deve ser
+o instante do sistema: DateTime.Now
+
+*/
+
+
 namespace CLG_17.Entities
 {
     internal class Order
