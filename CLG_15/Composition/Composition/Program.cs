@@ -4,6 +4,14 @@ using Composition.Entities.Enums;
 using System.Globalization;
 using System.ComponentModel;
 
+/*
+CHALLENGE 15:
+
+Ler os dados de um trabalhador com N contratos (N fornecido pelo usuário). Depois, solicitar
+do usuário um mês e mostrar qual foi o salário do funcionário nesse mês.
+
+*/
+
 namespace Composition
 {
     class Program
