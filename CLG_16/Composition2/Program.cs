@@ -2,6 +2,16 @@
 using System;
 using System.ComponentModel;
 
+
+/*
+CHALLENGE 16:
+
+Instancie manualmente os objetos mostrados abaixo e mostre-os na tela do
+terminal.
+
+*/
+
+
 namespace Composition2
 {
     class Program
