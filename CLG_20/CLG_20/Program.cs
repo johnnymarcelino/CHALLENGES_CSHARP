@@ -5,6 +5,16 @@ using CLG_20.Entities.Enums;
 using System.Globalization;
 
 
+/* 
+CHALLENGE 20:
+
+Fazer um programa para ler os dados de N figuras (N fornecido
+pelo usuário), e depois mostrar as áreas destas figuras na
+mesma ordem em que foram digitadas. 
+
+*/
+
+
 namespace CLG_20
 {
     class Program
