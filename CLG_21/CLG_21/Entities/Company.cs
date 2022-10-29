@@ -7,22 +7,21 @@ namespace CLG_21.Entities
 {
     internal class Company : TaxPayers
     {
-        public int Workers { get; set; }
-
+        public int NumberEmployees { get; set; }
 
         public Company()
         {
         }
 
-        public Company(int workers)
+        public Company(string name, double annualIncome, int numberEmployees) : base(name, annualIncome)
         {
-            Workers = workers;
+            NumberEmployees = numberEmployees;
         }
 
-        public double TaxTotalCom()
-        {
-            return Workers;
-        }
+        //public double TaxCom()
+        //{
+        //    return AnnualIncome - NumberEmployees;
+        //}
 
     }
 }

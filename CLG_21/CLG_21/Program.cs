@@ -1,4 +1,8 @@
-﻿using System;
+﻿using CLG_21.Entities;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Xml.Linq;
 
 /*
 
@@ -30,10 +34,74 @@ namespace CLG_21
     {
         static void Main(string[] args)
         {
+
             Console.Write("Enter with the number of taxpayers: ");
             int taxpayers = int.Parse(Console.ReadLine());
-            Console.Write("Individual or company (i/c) ? ");
-            string indCom = Console.ReadLine();
+            double taxAnnual = 0.0;
+            List<TaxPayers> taxpayersList = new List<TaxPayers>();
+
+            for (int i = 1; i <= taxpayers; i++)
+            {
+                Console.WriteLine($"Tax payer #{i} data:");
+                Console.Write("Individual or company (i/c) ? ");
+                char indCom = char.Parse(Console.ReadLine());
+
+                if (indCom == 'i')
+                {
+                    Console.Write("Name: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Annual Income: ");
+                    double annualIncome = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    Console.Write("Health Expenditures: ");
+                    double healthEspending = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    if (annualIncome > 20000 && healthEspending > 0)
+                    {
+                        taxAnnual = annualIncome * .25 - healthEspending * .50;
+                        //taxAnnual = taxAnnual + (healthEspending * .50);
+                    }
+                    else if (annualIncome < 20000.00)
+                    {
+                        taxAnnual = annualIncome - (annualIncome * .15);
+                    }
+                    //else if(healthEspending )
+                    TaxPayers taxIndividual = new Individual(name, taxAnnual, healthEspending);
+                    taxpayersList.Add(taxIndividual);
+                    Console.WriteLine();
+                }
+                else if (indCom == 'c')
+                {
+                    Console.Write("Name: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Annual Income: ");
+                    double annualIncome = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    Console.Write("Number of employees: ");
+                    int numberEmployees = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    if (numberEmployees > 10)
+                    {
+                        taxAnnual = annualIncome * .14;
+                    }
+                    else
+                    {
+                        taxAnnual = annualIncome - (annualIncome * .16);
+                    }
+                    TaxPayers taxCompany = new Company(name, taxAnnual, numberEmployees);
+                    taxpayersList.Add(taxCompany);
+                    Console.WriteLine();
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("TAXES PAID:");
+            foreach (TaxPayers taxPayers in taxpayersList)
+            {
+                //TaxPayers tax = new TaxPayers();
+                Console.WriteLine(taxPayers.Name + " $ " + taxPayers.AnnualIncome.ToString("F2", CultureInfo.InvariantCulture));
+            }
+            
+            //foreach (Company taxPayers in taxpayersList)
+            //{
+            //    taxPayers.AnnualIncome(taxPayers);
+            //}
         }
     }
 }

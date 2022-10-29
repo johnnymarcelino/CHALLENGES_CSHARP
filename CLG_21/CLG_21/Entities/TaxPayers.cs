@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Globalization;
 
 namespace CLG_21.Entities
 {
@@ -9,25 +10,31 @@ namespace CLG_21.Entities
         //public double Taxpayers { get; set; }
         public string Name { get; set; }  // name
         public double AnnualIncome { get; set; }  // annual income
-        public double TaxPaid { get; set; }  // total tax paid
-        public double TaxCollected { get; set; }  // tax collected
+
+        //public double TaxPaid { get; set; }  // total tax paid
+        //public double TaxCollected { get; set; }  // tax collected
 
         public TaxPayers()
         {
         }
 
-        public TaxPayers(string name, double taxPaid, double taxCollected)
+        public TaxPayers(string name, double annualIncome)
         {
             //Taxpayers = taxpayers;
             Name = name;
-            TaxPaid = taxPaid;
-            TaxCollected = taxCollected;
+            AnnualIncome = annualIncome;
+            //TaxPaid = taxPaid;
+            //TaxCollected = taxCollected;
         }
 
-        //public double TaxTotal()
+        public string Tax()
+        {
+            return Name + " $ " + AnnualIncome.ToString("F2", CultureInfo.InvariantCulture);
+        }
+        //public string TaxOne()
         //{
-        //    return TaxPaid;
+        //    StringBuilder all = new StringBuilder();
+        //    all.AppendLine();
         //}
-
     }
 }

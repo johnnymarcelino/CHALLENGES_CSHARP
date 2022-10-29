@@ -13,16 +13,20 @@ namespace CLG_21.Entities
         {
         }
 
-
-        public Individual(string name, double taxPaid, double taxCollected, double income, double healthSpending) : base(name, taxPaid, taxCollected)
+        public Individual(string name, double annualIncome, double healthSpending) : base(name, annualIncome)
         {
             HealthSpending = healthSpending;
         }
 
-        public double TaxTotalInd()
-        {
-            return HealthSpending;
-        }
+        //public override string Tax()
+        //{
+        //    return base.Tax();
+        //}
+        //public double TaxInd(double tax)
+        //{
+        //    return AnnualIncome = HealthSpending - tax;
+        //}
+
 
         //public double TaxIncomeInd()
         //{
