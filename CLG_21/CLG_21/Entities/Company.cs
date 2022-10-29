@@ -18,10 +18,17 @@ namespace CLG_21.Entities
             NumberEmployees = numberEmployees;
         }
 
-        //public double TaxCom()
-        //{
-        //    return AnnualIncome - NumberEmployees;
-        //}
+        public override double Tax()
+        { 
+            if(NumberEmployees > 10)
+            {
+                return AnnualIncome * .14;
+            }
+            else
+            {
+                return AnnualIncome * .16;
+            }
+        }
 
     }
 }

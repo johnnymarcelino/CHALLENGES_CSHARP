@@ -8,7 +8,6 @@ namespace CLG_21.Entities
     {
         public double HealthSpending { get; set; }
 
-
         public Individual()
         {
         }
@@ -18,19 +17,16 @@ namespace CLG_21.Entities
             HealthSpending = healthSpending;
         }
 
-        //public override string Tax()
-        //{
-        //    return base.Tax();
-        //}
-        //public double TaxInd(double tax)
-        //{
-        //    return AnnualIncome = HealthSpending - tax;
-        //}
-
-
-        //public double TaxIncomeInd()
-        //{
-        //    return base.TaxPaid;
-        //}
+        public override double Tax()
+        {
+            if(AnnualIncome < 20000.00)
+            {
+                return AnnualIncome * .15 - HealthSpending * .50;
+            }
+            else
+            {
+                return AnnualIncome * .25 - HealthSpending * .5;
+            }
+        }
     }
 }

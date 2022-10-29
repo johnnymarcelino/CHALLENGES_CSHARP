@@ -1,8 +1,7 @@
-﻿using CLG_21.Entities;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using CLG_21.Entities;
 using System.Globalization;
-using System.Xml.Linq;
+using System.Collections.Generic;
 
 /*
 
@@ -37,7 +36,7 @@ namespace CLG_21
 
             Console.Write("Enter with the number of taxpayers: ");
             int taxpayers = int.Parse(Console.ReadLine());
-            double taxAnnual = 0.0;
+
             List<TaxPayers> taxpayersList = new List<TaxPayers>();
 
             for (int i = 1; i <= taxpayers; i++)
@@ -45,63 +44,41 @@ namespace CLG_21
                 Console.WriteLine($"Tax payer #{i} data:");
                 Console.Write("Individual or company (i/c) ? ");
                 char indCom = char.Parse(Console.ReadLine());
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Annual Income: ");
+                double annualIncome = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
                 if (indCom == 'i')
                 {
-                    Console.Write("Name: ");
-                    string name = Console.ReadLine();
-                    Console.Write("Annual Income: ");
-                    double annualIncome = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    Console.Write("Health Expenditures: ");
-                    double healthEspending = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    if (annualIncome > 20000 && healthEspending > 0)
-                    {
-                        taxAnnual = annualIncome * .25 - healthEspending * .50;
-                        //taxAnnual = taxAnnual + (healthEspending * .50);
-                    }
-                    else if (annualIncome < 20000.00)
-                    {
-                        taxAnnual = annualIncome - (annualIncome * .15);
-                    }
-                    //else if(healthEspending )
-                    TaxPayers taxIndividual = new Individual(name, taxAnnual, healthEspending);
+                    Console.Write("Health Spending: ");
+                    double healthSpending = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    TaxPayers taxIndividual = new Individual(name, annualIncome, healthSpending);
                     taxpayersList.Add(taxIndividual);
                     Console.WriteLine();
                 }
                 else if (indCom == 'c')
                 {
-                    Console.Write("Name: ");
-                    string name = Console.ReadLine();
-                    Console.Write("Annual Income: ");
-                    double annualIncome = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     Console.Write("Number of employees: ");
                     int numberEmployees = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    if (numberEmployees > 10)
-                    {
-                        taxAnnual = annualIncome * .14;
-                    }
-                    else
-                    {
-                        taxAnnual = annualIncome - (annualIncome * .16);
-                    }
-                    TaxPayers taxCompany = new Company(name, taxAnnual, numberEmployees);
+                    TaxPayers taxCompany = new Company(name, annualIncome, numberEmployees);
                     taxpayersList.Add(taxCompany);
                     Console.WriteLine();
                 }
             }
 
+            double sum = 0;
             Console.WriteLine();
             Console.WriteLine("TAXES PAID:");
             foreach (TaxPayers taxPayers in taxpayersList)
             {
-                //TaxPayers tax = new TaxPayers();
-                Console.WriteLine(taxPayers.Name + " $ " + taxPayers.AnnualIncome.ToString("F2", CultureInfo.InvariantCulture));
+                double tax = taxPayers.Tax();
+                Console.WriteLine(taxPayers.Name + " $ " + tax.ToString("F2", CultureInfo.InvariantCulture));
+                sum += tax;
             }
-            
-            //foreach (Company taxPayers in taxpayersList)
-            //{
-            //    taxPayers.AnnualIncome(taxPayers);
-            //}
+
+            Console.WriteLine();
+            Console.WriteLine("TOTAL TAXES: $ " + sum.ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 }
