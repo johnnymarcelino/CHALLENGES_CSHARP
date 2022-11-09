@@ -22,7 +22,6 @@ namespace CLG_19.Entities
         {
             return Name + " $ " + Price.ToString("F2", CultureInfo.InvariantCulture)
                 + "(Customs fee: $ " + CustomsFee.ToString("F2", CultureInfo.InvariantCulture) + ")";
-
         }
 
         public virtual double TotalPrice()
