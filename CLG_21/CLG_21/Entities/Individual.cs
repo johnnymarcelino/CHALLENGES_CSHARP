@@ -21,11 +21,11 @@ namespace CLG_21.Entities
         {
             if(AnnualIncome < 20000.00)
             {
-                return AnnualIncome * .15 - HealthSpending * .50;
+                return (AnnualIncome * .15) - (HealthSpending * .50);
             }
             else
             {
-                return AnnualIncome * .25 - HealthSpending * .5;
+                return (AnnualIncome * .25) - (HealthSpending * .5);
             }
         }
     }
