@@ -26,6 +26,5 @@ namespace CLG_24.Service
                 contract.AddInstallment(new Installment(date, fullQuota));
             }
         }
-
     }
 }

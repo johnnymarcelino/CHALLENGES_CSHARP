@@ -36,7 +36,7 @@ namespace CLG_24
             int months = int.Parse(Console.ReadLine());
 
             Contract myContract = new Contract(contractNumber, contractDate, contractValue);
-
+            
             ContractService contractService = new ContractService(new PaypalService());
             contractService.ProcessContract(myContract, months);
 

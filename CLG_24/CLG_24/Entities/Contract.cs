@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace CLG_24.Entities
 {
@@ -9,7 +9,7 @@ namespace CLG_24.Entities
         public int Number { get; set; }
         public DateTime Date { get; set; }
         public double TotalValue { get; set; }
-        public List<Installment> Installments { get; set; }
+        public List<Installment> Installments { get; set; }  // = new List<Installment>();
 
         public Contract(int number, DateTime date, double totalValue)
         {
