@@ -1,2 +1,2 @@
 # CHALLENGES_CSHARP
-A repository to do exercises in C# language
+A repository to make challenges in C# language
