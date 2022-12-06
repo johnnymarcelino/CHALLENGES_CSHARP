@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CLG_25.Entities
 {
@@ -20,7 +18,7 @@ namespace CLG_25.Entities
             {
                 return false;
             }
-            LogRecord other = (LogRecord)obj;
+            LogRecord other = obj as LogRecord;
             return Username.Equals(other.Username);
         }
     }
