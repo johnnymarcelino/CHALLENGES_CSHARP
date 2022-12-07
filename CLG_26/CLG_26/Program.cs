@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 /*
@@ -18,7 +19,44 @@ namespace CLG_26
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            HashSet<int> courseA = new HashSet<int>();
+            HashSet<int> courseB = new HashSet<int>();
+            HashSet<int> courseC = new HashSet<int>();
+
+            Console.WriteLine("How many students for course A:");
+            int studentsQuantity = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= studentsQuantity; i++)
+            {
+                Console.Write($"Enter with the code of the {i}° student of the course A: ");
+                int studentCode = int.Parse(Console.ReadLine());
+                courseA.Add(studentCode);
+            }
+
+            Console.WriteLine("How many students for course B:");
+            studentsQuantity = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= studentsQuantity; i++)
+            {
+                Console.Write($"Enter with the code of the {i}° student of the course B: ");
+                int studentCode = int.Parse(Console.ReadLine());
+                courseB.Add(studentCode);
+            }
+
+            Console.WriteLine("How many students for course C:");
+            studentsQuantity = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= studentsQuantity; i++)
+            {
+                Console.Write($"Enter with the code of the {i}° student of the course C: ");
+                int studentCode = int.Parse(Console.ReadLine());
+                courseC.Add(studentCode);
+            }
+
+            HashSet<int> all = new HashSet<int>(courseA);
+            all.UnionWith(courseB);
+            all.UnionWith(courseC);
+            Console.WriteLine("Total students: " + all.Count);
         }
     }
 }
